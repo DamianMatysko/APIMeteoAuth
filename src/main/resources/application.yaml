@@ -16,7 +16,8 @@ spring:
 
   datasource:
     platform: postgres
-    url: 'jdbc:postgresql://localhost:5432/db_meteoauth'
+#    url: 'jdbc:postgresql://localhost:5432/db_meteoauth'
+    url: 'jdbc:postgresql://db:5432/db_meteoauth'
     username: postgres
     password: pass
 
@@ -59,6 +60,7 @@ app:
   oauth2:
     authorizedRedirectUris:
       - http://localhost:4200/login
+      - https://meteoauth.tk/login
 
 logging:
   level:

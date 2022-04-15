@@ -41,7 +41,7 @@ public class MeasuredValuesController {
 
     }
 
-    @GetMapping("/all")//todo permit all
+    @GetMapping("/all")
     public ResponseEntity<List<MeasuredValuesDtoResponse>> getMeasuredValues() {
         Iterable<MeasuredValue> measuredValuesList = measuredValuesRepository.findAll();
         return ResponseEntity.ok().body(measuredValuesAssembler.getMeasuredValuesDtoRequestList(measuredValuesList));

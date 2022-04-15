@@ -76,14 +76,20 @@ public class AuthenticationController {
             String subject = null;
             String refreshToken = null;
 
-            if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+//            if(authorizationHeader == null){
+//                return ResponseEntity.badRequest().build();
+//            }
+
+            if (authorizationHeader.startsWith("Bearer ")) {
                 refreshToken = authorizationHeader.substring(7);
-                subject = tokenProvider.extractSubject(refreshToken);
+            } else {
+                refreshToken = authorizationHeader;
             }
             if (!tokenProvider.validateToken(refreshToken)) {
-                throw new Exception("Invalid refresh token");
+                return ResponseEntity.badRequest().build();
             }
 
+            subject = tokenProvider.extractSubject(refreshToken);
             UserDetails userDetails = userDetailsService.loadUserByUsername(subject);
             final String token = tokenProvider.generateToken(userDetails);
 

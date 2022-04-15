@@ -13,6 +13,7 @@ services:
 
   pgadmin:
     image: dpage/pgadmin4
+    container_name: pgadmin4
     ports:
       - "9002:80"
     environment:
@@ -21,6 +22,13 @@ services:
     volumes:
       - ./.docker/pgadmin:/root/.pgadmin
     restart: always
+
+#  api:
+#    image: fireflysk/meteoauthapi:1.1
+#    container_name: api
+#    ports:
+#      - "9090:9090"
+#    restart: always
 
 volumes:
   docker-postgres:

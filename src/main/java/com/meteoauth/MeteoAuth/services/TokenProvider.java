@@ -123,8 +123,7 @@ public class TokenProvider {
 
     public Boolean validateTokenForStation(String token, Station station) {
         final Long id = Long.parseLong(extractSubject(token));
-        return (id.equals(station.getId())); //todo && !isTokenExpired(token)
-
+        return (id.equals(station.getId()));
     }
 
     public boolean validateToken(String authToken) {

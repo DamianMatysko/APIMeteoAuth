@@ -53,6 +53,6 @@ public class MeasuredValue {
     private Integer rainfall;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "station_id", nullable = false) //todo only id?
+    @JoinColumn(name = "station_id", nullable = false)
     private Station station;
 }

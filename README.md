@@ -24,6 +24,3 @@ Meteo Authentication is a project to provide meteorological data from Raspberry 
 
 ### Device auth diagram:
 ![](diagrams/Flow_Registration-Flow.png)
-
-### [Click here to link to the frontend repository page](https://github.com/PatrikStrausz/MeteoAuthentication_FE)
-

@@ -18,7 +18,6 @@ public class UserAssembler {
         this.passwordEncoder = new BCryptPasswordEncoder(11);
     }
 
-
     public UserDtoResponse getUserDtoResponse(User user) {
         UserDtoResponse userDtoResponse = new UserDtoResponse();
         userDtoResponse.setUsername(user.getUsername());

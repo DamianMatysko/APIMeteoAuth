@@ -38,7 +38,7 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
 
         String path = request.getRequestURI().substring(request.getContextPath().length());
 
-        if (path.equals("/api/authentication/refreshToken") || path.equals("/api/authentication/authenticate")) {
+        if (path.equals("/api/authentication/refreshToken") || path.equals("/api/authentication/authenticate")  || path.equals("/api/authentication/register")) {
             filterChain.doFilter(request, response);
             return;
         }
